@@ -5,11 +5,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'movie',
+    redirectTo: 'movie'
   },
   {
     path: 'movie',
-    loadChildren: () => import('../app/movies/movie.module').then(m => m.MovieModule),
+    loadChildren: () =>
+      import('../app/movies/movie.module').then((m) => m.MovieModule)
   },
   { path: '**', redirectTo: '/movie' }
 ];
@@ -18,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
