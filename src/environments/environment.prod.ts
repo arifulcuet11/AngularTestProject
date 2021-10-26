@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  endPointUrl: 'https://test-movies-api.vercel.app'
 };
