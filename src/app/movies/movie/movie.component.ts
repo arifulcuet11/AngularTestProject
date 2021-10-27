@@ -121,15 +121,7 @@ export class MovieComponent implements OnInit {
         },
         {
           readOnly: true,
-          renderer: (
-            instance,
-            TD,
-            row,
-            col,
-            prop,
-            value,
-            cellProperties
-          ): HTMLTableCellElement => {
+          renderer: (instance, TD, row): HTMLTableCellElement => {
             TD.innerHTML = `<button class="delete-btn" id="${row}">Delete</button><button class="view-btn" id="${row}">view</button>`;
             return TD;
           }
