@@ -6,8 +6,9 @@ import { MovieComponent } from './movie/movie.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DailogAddMovieComponent } from './movie/dailog-add-movie/dailog-add-movie.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DailogViewDetailsComponent } from './movie/dailog-view-details/dailog-view-details.component';
 @NgModule({
-  declarations: [MovieComponent, DailogAddMovieComponent],
+  declarations: [MovieComponent, DailogAddMovieComponent, DailogViewDetailsComponent],
   imports: [
     MovieRoutingModule,
     HotTableModule,

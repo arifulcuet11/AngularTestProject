@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-header">
+      {{movieDetail?.title}}
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="row">ID</th>
+                <td>{{movieDetail?.id}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Title</th>
+                <td>{{movieDetail?.title}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Original Title</th>
+                <td>{{movieDetail?.originalTitle}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Original Language</th>
+                <td>{{movieDetail?.originalLang}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Overview</th>
+                <td>{{movieDetail?.overview}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Popularity</th>
+                <td>{{movieDetail.popularity}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Release Date</th>
+                <td>{{movieDetail?.releaseDate |date}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Reveneu</th>
+                <td>{{movieDetail?.revenue}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Status</th>
+                <td>{{movieDetail?.status}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Tagline</th>
+                <td>{{movieDetail?.tagline}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Vote Count</th>
+                <td>{{movieDetail?.voteCount}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Average Vote</th>
+                <td>{{movieDetail?.voteAverage |date}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Budget</th>
+                <td>{{movieDetail?.budget}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
