@@ -78,7 +78,23 @@ export class MovieComponent implements OnInit {
       columns: [
         { data: 'id', type: 'numeric', readOnly: true },
         { data: 'title', type: 'text' },
-        { data: 'overviewShort', type: 'text' },
+        {
+          data: 'overview',
+          type: 'text',
+          renderer: (
+            instance,
+            TD,
+            row,
+            col,
+            prop,
+            value
+          ): HTMLTableCellElement => {
+            if (value?.length > 80) {
+              TD.innerHTML = value.slice(0, 80)?.concat('...');
+            }
+            return TD;
+          }
+        },
         { data: 'popularity', type: 'text' },
         { data: 'revenue', type: 'text' },
         { data: 'runtime', type: 'text' },
@@ -86,7 +102,23 @@ export class MovieComponent implements OnInit {
         { data: 'tagline', type: 'text' },
         { data: 'voteAverage', type: 'numeric' },
         { data: 'voteCount', type: 'numeric' },
-        { data: 'releaseDate', type: 'text' },
+        {
+          data: 'releaseDate',
+          type: 'date',
+          renderer: (
+            instance,
+            TD,
+            row,
+            col,
+            prop,
+            value
+          ): HTMLTableCellElement => {
+            if (value) {
+              TD.innerHTML = new Date(value)?.toISOString()?.split('T')[0];
+            }
+            return TD;
+          }
+        },
         {
           readOnly: true,
           renderer: (
@@ -149,11 +181,6 @@ export class MovieComponent implements OnInit {
   renderPage(index: number) {
     this.currentIndex = index;
     this.currentPageData = this.movies.slice(index * 10, index * 10 + 10);
-    this.currentPageData.forEach((ele: Movie) => {
-      if (ele.overview.length > 100) {
-        ele.overviewShort = ele.overview.slice(0, 100).concat('...');
-      }
-    });
     this.hotRegisterer.getInstance(this.id).loadData(this.currentPageData);
   }
   deleteMovie(id: number) {
@@ -164,6 +191,7 @@ export class MovieComponent implements OnInit {
     });
   }
   updateMovie(id: number, item: Movie) {
+    item.releaseDate = new Date(item.releaseDate);
     this.movieService.update(id, item).subscribe((res) => {
       this.messageService.show(this.messageService.msgUpdate);
     });

@@ -4,9 +4,8 @@ export interface Movie {
   originalLang: string;
   originalTitle: string;
   overview: string;
-  overviewShort?: string;
   popularity: string;
-  releaseDate: string;
+  releaseDate: Date;
   revenue?: number;
   runtime: number;
   status: string;

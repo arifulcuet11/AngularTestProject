@@ -8,7 +8,11 @@ import { DailogAddMovieComponent } from './movie/dailog-add-movie/dailog-add-mov
 import { ReactiveFormsModule } from '@angular/forms';
 import { DailogViewDetailsComponent } from './movie/dailog-view-details/dailog-view-details.component';
 @NgModule({
-  declarations: [MovieComponent, DailogAddMovieComponent, DailogViewDetailsComponent],
+  declarations: [
+    MovieComponent,
+    DailogAddMovieComponent,
+    DailogViewDetailsComponent
+  ],
   imports: [
     MovieRoutingModule,
     HotTableModule,
@@ -17,6 +21,6 @@ import { DailogViewDetailsComponent } from './movie/dailog-view-details/dailog-v
     ReactiveFormsModule
   ],
   providers: [],
-  entryComponents: [DailogAddMovieComponent],
+  entryComponents: [DailogAddMovieComponent]
 })
 export class MovieModule {}
